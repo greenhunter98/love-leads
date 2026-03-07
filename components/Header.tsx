@@ -96,7 +96,7 @@ export default function Header() {
               
               {/* Distinctive Donate Link */}
               <Link
-                href="/contact"
+                href="/donate"
                 className="bg-[#A65D45] text-white px-5 py-2 text-sm font-semibold hover:bg-[#8E4F3A] transition-colors shadow-md"
                 onClick={handleLinkClick}
               >
@@ -225,7 +225,7 @@ export default function Header() {
               
               {/* Mobile Donate Link */}
               <Link
-                href="/contact"
+                href="/donate"
                 className="block mx-2 bg-[#A65D45] text-white px-4 py-2.5 text-sm font-semibold text-center hover:bg-[#8E4F3A] transition-colors"
                 onClick={() => {
                   setIsMenuOpen(false)
