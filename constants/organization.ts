@@ -274,8 +274,8 @@ export const teamMembers = [
 
 // ----- CONTACT & DONATE -----
 export const contact = {
-  generalEmail: "info@loveleads.org",
-  phone: "+265 ...", // update if available
+  generalEmail: "lovleads20@gmail.com",
+  phone: "+265 994 291 015 / +265 995 320 460",
   address: "Southern Malawi (Nsanje and Phalombe districts)",
 };
 
