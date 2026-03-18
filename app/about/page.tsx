@@ -1,34 +1,20 @@
 import Link from 'next/link'
-import { ArrowRight, Eye, Target, Heart, MapPin, BookOpen, Quote, Users, Sparkles, Star, Cross } from 'lucide-react'
+import { ArrowRight, Eye, Target, Heart, MapPin, BookOpen, Quote, Users, Sparkles } from 'lucide-react'
+import {
+  orgName,
+  tagline,
+  background,
+  vision,
+  mission,
+  coreValues,
+  goals,
+  beliefs,
+  lifeChangingStatement,
+  teamQuote,
+  catchmentAreas
+} from '@/constants/organization'
 
 export default function AboutPage() {
-  const coreValues = [
-    'Incorporation of Christian values and culture',
-    'Integrity',
-    'Transparency',
-    'Accountability',
-    'Neutrality',
-    'Participatory decision making',
-    'Non discrimination',
-    'Commitment and hardworking'
-  ]
-
-  const goals = [
-    'To provide educational support/sponsorship for destitute children',
-    'Organizing business seminars to single parents and exposing them to business opportunities',
-    'Involving children in early child development programs and under‑five school feeding',
-    'Provide support to widows and promoting women\'s and children\'s rights through community education',
-    'Promote public awareness of STDs and HIV/AIDS to communities and youth through sports, film shows, drama, music, dance, and radio programs',
-    'Solving the problem of school dropouts by working out back‑to‑school campaigns at all education levels',
-    'Promote and support income generating activities (IGAs) in the fight against poverty',
-    'Providing support to people affected by disasters (psychological, material, spiritual)',
-    'Provide counseling and medical care in communities and referring those that need medical attention',
-    'Promoting sports and talent among the youths',
-    'To provide capacity building to the staff',
-    'To empower children and youth with education to reduce illiteracy rate in the community',
-    'To encourage the participation of Women in politics, socio‑economic and decision making'
-  ]
-
   return (
     <div className="bg-[#F5F0E8]">
       {/* Hero - book cover style without image */}
@@ -56,12 +42,12 @@ export default function AboutPage() {
               <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 text-[#A65D45]" />
               <span className="text-xs sm:text-sm tracking-[0.3em] uppercase text-[#E5D7C1]">Our Story</span>
             </div>
-            <h1 className=" text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-serif font-bold mb-3 sm:mb-4 leading-[0.9] ">
+            <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-serif font-bold mb-3 sm:mb-4 leading-[0.9]">
               About Us
             </h1>
             <div className="w-20 sm:w-24 md:w-32 h-1 bg-[#A65D45] mb-6 sm:mb-8"></div>
             <p className="text-lg sm:text-xl md:text-2xl text-[#E5D7C1] max-w-2xl leading-relaxed">
-              The journey of Love Leads Organization – from a dream to a movement
+              The journey of {orgName} – from a dream to a movement
             </p>
           </div>
         </div>
@@ -90,20 +76,11 @@ export default function AboutPage() {
           </div>
           <div className="md:col-span-2 space-y-4 sm:space-y-5 md:space-y-6 text-base sm:text-lg text-[#1E3A3F]/70 leading-relaxed">
             <p className="text-xl sm:text-2xl font-serif text-[#1E3A3F] mb-4 sm:mb-6 md:mb-8 relative pl-4 sm:pl-6 border-l-4 border-[#A65D45]">
-              "Love Leads Organization is a non-governmental and non-profit faith-based entity..."
+              {orgName} is a non-governmental and non-profit faith-based entity...
             </p>
-            <p>
-              Established by individuals who understood that the prevalence of street kids underscores a critical need that calls for urgent intervention to provide essential resources, support, and opportunities for education and rehabilitation, ensuring these vulnerable youths have a chance for a brighter future. These individuals also share the vision demanding the urgent need for intervention in disaster response and environmental conservation, as well as the pressing requirements for educational support for children.
-            </p>
-            <p>
-              Love leads passionately acknowledges the necessity for intervention in addressing early marriages, the growing rate of single-parent families, and the challenges faced by single parents in the community. These observations ignited a shared passion among individuals to form a cohesive team with the objective of mobilizing support for those significantly affected.
-            </p>
-            <div className="bg-[#FAF7F2] p-6 sm:p-8 mt-6 sm:mt-8 relative">
-              <Quote className="absolute top-3 sm:top-4 left-3 sm:left-4 w-6 h-6 sm:w-8 sm:h-8 text-[#A65D45] opacity-20" />
-              <p className="italic text-[#1E3A3F] relative z-10 pl-4 sm:pl-6 text-sm sm:text-base">
-                "The collaborative efforts of Love Leads Organization aim to extend the message of love and care to these groups, exemplifying the love that God has for humanity."
-              </p>
-            </div>
+            {background.split('\n\n').map((paragraph, idx) => (
+              <p key={idx}>{paragraph}</p>
+            ))}
           </div>
         </div>
       </div>
@@ -125,14 +102,14 @@ export default function AboutPage() {
               <div className="absolute -left-2 sm:-left-3 top-0 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 bg-white rounded-full border-2 border-[#A65D45] group-hover:border-[#1E3A3F] transition-colors"></div>
               <h3 className="text-2xl sm:text-3xl font-serif text-[#1E3A3F] mb-3 sm:mb-4">"Life Changing"</h3>
               <p className="text-base sm:text-lg text-[#1E3A3F]/70 leading-relaxed">
-                The main interest of the organization is to join people and create a platform on which they can reach out to children and the youth; to see that some hopeless souls find life hopeful, to lay a good developing foundation in our children by providing early child education through back to school campaign, to make the young people see and understand that they still have the whole future in their hands.
+                {lifeChangingStatement}
               </p>
             </div>
             <div className="border-l-2 border-[#A65D45] pl-4 sm:pl-6 md:pl-8 relative group hover:border-[#1E3A3F] transition-colors">
               <div className="absolute -left-2 sm:-left-3 top-0 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 bg-white rounded-full border-2 border-[#A65D45] group-hover:border-[#1E3A3F] transition-colors"></div>
               <h3 className="text-2xl sm:text-3xl font-serif text-[#1E3A3F] mb-3 sm:mb-4">"The Action Way"</h3>
               <p className="text-base sm:text-lg text-[#1E3A3F]/70 leading-relaxed">
-                All these have a Christian approach as learnt from our Lord and Master Jesus Christ, which is the way of professing our faith and letting "love" (the greatest commandment of all) take a lead.
+                {beliefs.christianPerspective}
               </p>
             </div>
           </div>
@@ -151,7 +128,7 @@ export default function AboutPage() {
             <span className="text-[#E5D7C1] font-mono text-xs sm:text-sm">01</span>
             <h2 className="text-3xl sm:text-4xl font-serif text-[#E5D7C1] mt-1 sm:mt-2 mb-4 sm:mb-5 md:mb-6">Our Vision</h2>
             <p className="text-base sm:text-lg text-[#E5D7C1]/80 leading-relaxed">
-              "To create new hope and a better future by becoming Malawi's premier organization that envisions a society where young people and women have equal access to resources and are actively involved in advocacy and policy influence for the betterment of their families and communities."
+              {vision}
             </p>
           </div>
           <div className="bg-[#FAF7F2] p-8 sm:p-10 md:p-12 lg:p-16 relative overflow-hidden">
@@ -163,9 +140,9 @@ export default function AboutPage() {
             <span className="text-[#1E3A3F] font-mono text-xs sm:text-sm">02</span>
             <h2 className="text-3xl sm:text-4xl font-serif text-[#1E3A3F] mt-1 sm:mt-2 mb-4 sm:mb-5 md:mb-6">Our Mission</h2>
             <div className="space-y-3 sm:space-y-4 text-[#1E3A3F]/70 text-base sm:text-lg">
-              <p>Love Leads is engaged in evangelistic activities, educational programs by enhancing early child development through back to school campaign, creating education opportunities and providing material support to the young people by use of individualized support.</p>
+              <p>{mission}</p>
               <p className="italic border-l-2 border-[#A65D45] pl-3 sm:pl-4">
-                "We choose to believe that the main purpose of life is to make someone have a life."
+                {beliefs.loveQuote}
               </p>
             </div>
           </div>
@@ -201,9 +178,9 @@ export default function AboutPage() {
               Our Catchment Area
             </h2>
             <p className="text-lg sm:text-xl text-[#1E3A3F]/60 max-w-3xl leading-relaxed">
-              The organization affects five chieftaincies in the Southern part of Malawi-Central Africa: 
+              The organization affects five chieftaincies in the Southern part of Malawi-Central Africa:
               <span className="block mt-3 sm:mt-4 text-[#1E3A3F] bg-white p-3 sm:p-4 border-l-4 border-[#A65D45] text-base sm:text-lg">
-                Nsanje Group Village Head Man Chapinga, VHM Napasha, Failo, Mulambala, Mathiya, Mphiphira.
+                {catchmentAreas[0]?.chiefs.join(', ')}
               </span>
             </p>
           </div>
@@ -262,7 +239,7 @@ export default function AboutPage() {
           <div className="px-6 sm:px-8 md:px-12 py-10 sm:py-12 md:py-16">
             <Users className="w-8 sm:w-9 md:w-10 h-8 sm:h-9 md:h-10 text-[#A65D45] mx-auto mb-6 sm:mb-8" />
             <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif italic text-[#1E3A3F] mb-6 sm:mb-8 leading-relaxed">
-              "Our team is propelled by the belief that the most useful asset of a person is not just knowledge but a heart full of love with ears open to listen and hand willing to help."
+              "{teamQuote}"
             </p>
             <Link 
               href="/team" 

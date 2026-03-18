@@ -1,18 +1,17 @@
+"use client"
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { 
   Heart, 
   CreditCard, 
   Banknote, 
-  Smartphone, 
   Shield, 
   ArrowRight, 
   CheckCircle,
-  Globe,
-  Mail,
-  Phone,
   Copy
 } from 'lucide-react'
+import { orgName, beliefs, donate } from '@/constants/organization'
 
 export default function DonatePage() {
   const donationOptions = [
@@ -29,27 +28,7 @@ export default function DonatePage() {
       description: 'Direct bank transfers to our Malawi account.',
       action: 'View Bank Details',
       color: '#1E3A3F'
-    },
-    {
-      icon: Smartphone,
-      title: 'Mobile Money',
-      description: 'Send donations via Airtel Money or TNM Mpamba.',
-      action: 'View Numbers',
-      color: '#A65D45'
     }
-  ]
-
-  const bankDetails = {
-    bank: 'National Bank of Malawi',
-    accountName: 'Love Leads Organization',
-    accountNumber: '1009876543',
-    branch: 'Blantyre Main Branch',
-    swift: 'NBMA MWMW'
-  }
-
-  const mobileMoney = [
-    { provider: 'Airtel Money', number: '+265 994 291 015' },
-    { provider: 'TNM Mpamba', number: '+265 884 127 220' }
   ]
 
   const impactItems = [
@@ -98,9 +77,9 @@ export default function DonatePage() {
       <div className="container mx-auto px-4 sm:px-6 md:px-12 max-w-4xl py-16 md:py-20">
         <div className="text-center">
           <p className="text-xl sm:text-2xl md:text-3xl font-serif italic text-[#1E3A3F] leading-relaxed">
-            "Little love demonstrated can do much more than much love spoken."
+            "{beliefs.loveQuote}"
           </p>
-          <p className="text-[#A65D45] mt-4 text-sm">— Love Leads Organization</p>
+          <p className="text-[#A65D45] mt-4 text-sm">— {orgName}</p>
         </div>
       </div>
 
@@ -126,7 +105,7 @@ export default function DonatePage() {
           <p className="text-lg text-[#1E3A3F]/50">Choose the method that works best for you</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {donationOptions.map((option, idx) => {
             const Icon = option.icon
             return (
@@ -153,17 +132,21 @@ export default function DonatePage() {
             <div className="space-y-4">
               <div>
                 <p className="text-xs uppercase tracking-wider text-[#1E3A3F]/40 mb-1">Bank</p>
-                <p className="text-[#1E3A3F] font-medium">{bankDetails.bank}</p>
+                <p className="text-[#1E3A3F] font-medium">{donate.bank.bankName}</p>
               </div>
               <div>
                 <p className="text-xs uppercase tracking-wider text-[#1E3A3F]/40 mb-1">Account Name</p>
-                <p className="text-[#1E3A3F] font-medium">{bankDetails.accountName}</p>
+                <p className="text-[#1E3A3F] font-medium">{donate.bank.accountName}</p>
               </div>
               <div>
                 <p className="text-xs uppercase tracking-wider text-[#1E3A3F]/40 mb-1">Account Number</p>
                 <div className="flex items-center gap-2">
-                  <p className="text-[#1E3A3F] font-medium">{bankDetails.accountNumber}</p>
-                  <button className="text-[#A65D45] hover:text-[#8E4F3A]">
+                  <p className="text-[#1E3A3F] font-medium">{donate.bank.accountNumber}</p>
+                  <button 
+                    onClick={() => navigator.clipboard.writeText(donate.bank.accountNumber)}
+                    className="text-[#A65D45] hover:text-[#8E4F3A]"
+                    aria-label="Copy account number"
+                  >
                     <Copy className="w-4 h-4" />
                   </button>
                 </div>
@@ -172,62 +155,14 @@ export default function DonatePage() {
             <div className="space-y-4">
               <div>
                 <p className="text-xs uppercase tracking-wider text-[#1E3A3F]/40 mb-1">Branch</p>
-                <p className="text-[#1E3A3F] font-medium">{bankDetails.branch}</p>
+                <p className="text-[#1E3A3F] font-medium">{donate.bank.branch}</p>
               </div>
-              <div>
-                <p className="text-xs uppercase tracking-wider text-[#1E3A3F]/40 mb-1">SWIFT Code</p>
-                <p className="text-[#1E3A3F] font-medium">{bankDetails.swift}</p>
-              </div>
+              {/* If SWIFT code is needed, you could add it here; but it's not in constants, so omitted */}
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Mobile Money Section */}
-      <div className="container mx-auto px-4 sm:px-6 md:px-12 max-w-4xl py-12">
-        <div className="bg-[#FAF7F2] p-8 md:p-10">
-          <h3 className="text-2xl font-serif text-[#1E3A3F] mb-6">Mobile Money</h3>
-          <div className="grid sm:grid-cols-2 gap-6">
-            {mobileMoney.map((item, idx) => (
-              <div key={idx} className="flex items-center justify-between p-4 bg-white">
-                <div>
-                  <p className="text-sm font-medium text-[#1E3A3F]">{item.provider}</p>
-                  <p className="text-xs text-[#1E3A3F]/60">{item.number}</p>
-                </div>
-                <button className="text-[#A65D45] hover:text-[#8E4F3A]">
-                  <Copy className="w-4 h-4" />
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Security Note */}
-      <div className="container mx-auto px-4 sm:px-6 md:px-12 max-w-4xl py-8">
-        <div className="flex items-center justify-center gap-3 text-sm text-[#1E3A3F]/40">
-          <Shield className="w-4 h-4" />
-          <span>All donations are secure and used directly for our programs in Malawi</span>
-        </div>
-      </div>
-
-      {/* Contact Section */}
-      <div className="container mx-auto px-4 sm:px-6 md:px-12 max-w-4xl py-16 md:py-20">
-        <div className="text-center border-t border-[#E5D7C1] pt-12">
-          <h2 className="text-3xl md:text-4xl font-serif text-[#1E3A3F] mb-4">Questions?</h2>
-          <p className="text-lg text-[#1E3A3F]/50 mb-8">
-            We're here to help with any questions about giving.
+          <p className="text-xs text-[#1E3A3F]/40 mt-6">
+            Please include your name and "Donation" as reference. For international transfers, contact us for SWIFT/IBAN.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <a href="mailto:lovleads20@gmail.com" className="flex items-center gap-2 text-[#1E3A3F]/70 hover:text-[#A65D45] transition-colors">
-              <Mail className="w-4 h-4" />
-              <span>lovleads20@gmail.com</span>
-            </a>
-            <a href="tel:+265994291015" className="flex items-center gap-2 text-[#1E3A3F]/70 hover:text-[#A65D45] transition-colors">
-              <Phone className="w-4 h-4" />
-              <span>(+265) 0994 291 015</span>
-            </a>
-          </div>
         </div>
       </div>
 

@@ -29,10 +29,6 @@ export default function NotFound() {
             But don't worry, our mission continues.
           </p>
 
-          {/* Quote */}
-          <p className="text-sm italic text-[#1E3A3F]/40 mb-10 max-w-lg mx-auto">
-            "Little love demonstrated can do much more than much love spoken."
-          </p>
 
           {/* Action buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Phone, Mail, MapPin, Heart, Send, Clock, MessageCircle } from 'lucide-react'
+import { contact, beliefs, catchmentAreas, orgName } from '@/constants/organization'
 
 export default function ContactPage() {
   return (
@@ -37,8 +38,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-sm font-medium text-[#1E3A3F] mb-1">Visit Us</h3>
-                    <p className="text-sm text-[#1E3A3F]/60">Southern Malawi </p>
-                    <p className="text-xs text-[#1E3A3F]/40 mt-1">Nsanje and Phalombe</p>
+                    <p className="text-sm text-[#1E3A3F]/60">{contact.address}</p>
                   </div>
                 </div>
                 
@@ -48,8 +48,14 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-sm font-medium text-[#1E3A3F] mb-1">Call Us</h3>
-                    <p className="text-sm text-[#1E3A3F]/60">(+265) 0994 291 015</p>
-                    <p className="text-sm text-[#1E3A3F]/60">(+265) 0884 127 220</p>
+                    {/* If contact.phones is an array, map over it; otherwise use a single line */}
+                    {Array.isArray(contact.phone) ? (
+                      contact.phone.map((num, idx) => (
+                        <p key={idx} className="text-sm text-[#1E3A3F]/60">{num}</p>
+                      ))
+                    ) : (
+                      <p className="text-sm text-[#1E3A3F]/60">{contact.phone}</p>
+                    )}
                   </div>
                 </div>
                 
@@ -59,7 +65,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-sm font-medium text-[#1E3A3F] mb-1">Email Us</h3>
-                    <p className="text-sm text-[#1E3A3F]/60 break-all">lovleads20@gmail.com</p>
+                    <p className="text-sm text-[#1E3A3F]/60 break-all">{contact.generalEmail}</p>
                   </div>
                 </div>
                 
@@ -76,10 +82,10 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Quote - subtle, not repetitive */}
+              {/* Quote - from beliefs */}
               <div className="mt-8 pt-6 border-t border-[#E5D7C1]">
                 <p className="text-xs text-[#1E3A3F]/40 italic">
-                  "Kindness is the language the vulnerable understand best."
+                  "{beliefs.loveQuote}"
                 </p>
               </div>
             </div>
@@ -182,7 +188,7 @@ export default function ContactPage() {
       <div className="container mx-auto px-6 md:px-12 max-w-7xl pb-32">
         <div className="border-t border-[#E5D7C1] pt-12 text-center">
           <p className="text-sm text-[#1E3A3F]/40">
-            Serving communities across five chieftaincies in Southern Malawi.
+            Serving communities across {catchmentAreas.length} chieftaincies in Southern Malawi.
           </p>
         </div>
       </div>

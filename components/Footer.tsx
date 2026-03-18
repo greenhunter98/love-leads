@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Heart, MapPin, Phone, Mail, Facebook, Twitter, Instagram, ArrowRight } from 'lucide-react'
+import { orgName, tagline, beliefs, contact, catchmentAreas } from '@/constants/organization'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -33,13 +34,13 @@ export default function Footer() {
                 <div className="absolute -inset-1 bg-[#A65D45]/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
               <div className="flex flex-col">
-                <span className="text-lg sm:text-xl font-serif font-bold text-white leading-tight">Love Leads</span>
-                <span className="text-[8px] sm:text-[10px] tracking-[0.3em] uppercase text-[#E5D7C1]/40">The Action Way</span>
+                <span className="text-lg sm:text-xl font-serif font-bold text-white leading-tight">{orgName}</span>
+                <span className="text-[8px] sm:text-[10px] tracking-[0.3em] uppercase text-[#E5D7C1]/40">{tagline}</span>
               </div>
             </Link>
             
             <p className="text-xs sm:text-sm leading-relaxed text-[#E5D7C1]/60 mb-4 sm:mb-5 md:mb-6 max-w-sm">
-              "Little love demonstrated can do much more than much love spoken. Kindness is the language the vulnerable understand best."
+              "{beliefs.loveQuote}"
             </p>
             
             <div className="flex space-x-2 sm:space-x-3">
@@ -97,15 +98,23 @@ export default function Footer() {
             <ul className="space-y-2 sm:space-y-3">
               <li className="flex items-start gap-2 sm:gap-3">
                 <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-[#A65D45] shrink-0 mt-0.5" />
-                <span className="text-xs sm:text-sm text-[#E5D7C1]/60">Southern Malawi – Central Africa</span>
+                <span className="text-xs sm:text-sm text-[#E5D7C1]/60">{contact.address}</span>
               </li>
               <li className="flex items-start gap-2 sm:gap-3">
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-[#A65D45] shrink-0" />
-                <span className="text-xs sm:text-sm text-[#E5D7C1]/60">(+265) 0994 291 015<br/>(+265) 0884 127 220</span>
+                <span className="text-xs sm:text-sm text-[#E5D7C1]/60">
+                  {Array.isArray(contact.phone) ? (
+                    contact.phone.map((num, idx) => (
+                      <span key={idx}>{num}<br /></span>
+                    ))
+                  ) : (
+                    contact.phone
+                  )}
+                </span>
               </li>
               <li className="flex items-start gap-2 sm:gap-3">
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-[#A65D45] shrink-0" />
-                <span className="text-xs sm:text-sm text-[#E5D7C1]/60 break-all">lovleads20@gmail.com</span>
+                <span className="text-xs sm:text-sm text-[#E5D7C1]/60 break-all">{contact.generalEmail}</span>
               </li>
             </ul>
           </div>
@@ -113,7 +122,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-[#A65D45]/20 py-4 sm:py-5 md:py-6 text-xs sm:text-sm text-[#E5D7C1]/40 flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
-          <p>&copy; {currentYear} Love Leads Organization. All rights reserved.</p>
+          <p>&copy; {currentYear} {orgName}. All rights reserved.</p>
         </div>
       </div>
     </footer>
