@@ -228,7 +228,7 @@ export const teamMembers = [
     role: "Founder",
     email: "pitanifortune@gmail.com",
     phone: "+265994291015",
-    image: "/images/team/Timothy Fortune Pitani Founder.jpeg",
+    image: "/images/team/Timothy-Fortune-Pitani-Founder.jpeg",
   },
   {
     id: 2,
@@ -236,7 +236,7 @@ export const teamMembers = [
     role: "Board Member",
     email: "chamanikagrace@gmail.com",
     phone: "+265881677265",
-    image: "/images/team/Grace Chamanika Board Member.jpeg",
+    image: "/images/team/Grace-Chamanika-Board-Member.jpeg",
   },
   {
     id: 3,
@@ -244,7 +244,7 @@ export const teamMembers = [
     role: "Board Member",
     email: "antony.chiniko@gmail.com",
     phone: "+265882393965",
-    image: "/images/team/Anthony Chiniko Board Member.jpeg",
+    image: "/images/team/Anthony-Chiniko-Board-Member.jpeg",
   },
   {
     id: 4,
@@ -252,7 +252,7 @@ export const teamMembers = [
     role: "Board Member",
     email: "dpalichina@gmail.com",
     phone: "+265884547363",
-    image: "/images/team/Doreen Pitani Board member.jpeg",
+    image: "/images/team/Doreen-Pitani-Board-Member.jpeg",
   },
   {
     id: 5,
@@ -260,7 +260,7 @@ export const teamMembers = [
     role: "Board Member",
     email: "cnkalodzwa@yahoo.co.uk",
     phone: "+265888549814",
-    image: "/images/team/Chisomo Nkoloma Board Member.jpeg",
+    image: "/images/team/Chisomo-Nkoloma-Board-Member.jpeg",
   },
   {
     id: 6,
@@ -268,7 +268,7 @@ export const teamMembers = [
     role: "Co-founder",
     email: "Charitykanyoza@gmail.com",
     phone: "+265995320460",
-    image: "/images/team/Charity Kanyoza Co Founder.jpeg",
+    image: "/images/team/Charity-Kanyoza-Co-Founder.jpeg",
   },
 ];
 
