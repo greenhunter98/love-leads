@@ -107,7 +107,7 @@ export default function ContactPage() {
                       id="name"
                       name="name"
                       className="w-full px-4 py-3 bg-[#F5F0E8] border-0 focus:ring-1 focus:ring-[#A65D45] outline-none text-[#1E3A3F] text-sm"
-                      placeholder="John Doe"
+                      placeholder="Your full name"
                     />
                   </div>
                   <div>
@@ -164,7 +164,7 @@ export default function ContactPage() {
                     name="message"
                     rows={4}
                     className="w-full px-4 py-3 bg-[#F5F0E8] border-0 focus:ring-1 focus:ring-[#A65D45] outline-none text-[#1E3A3F] text-sm resize-none"
-                    placeholder="Tell us how we can help..."
+                    placeholder="I'd like to volunteer..."
                   ></textarea>
                 </div>
 
