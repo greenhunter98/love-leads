@@ -230,8 +230,16 @@ export const teamMembers = [
     phone: "+265994291015",
     image: "/images/team/Timothy-Fortune-Pitani-Founder.jpg",
   },
-  {
+    {
     id: 2,
+    name: "Charity Kanyoza",
+    role: "Co-founder",
+    email: "Charitykanyoza@gmail.com",
+    phone: "+265995320460",
+    image: "/images/team/Charity-Kanyoza-Co-founder.jpg",
+  },
+  {
+    id: 3,
     name: "Grace Chamanika",
     role: "Board Member",
     email: "chamanikagrace@gmail.com",
@@ -239,7 +247,7 @@ export const teamMembers = [
     image: "/images/team/Grace-chamanika-Board-member.jpg",
   },
   {
-    id: 3,
+    id: 4,
     name: "Anthony Chiniko",
     role: "Board Member",
     email: "antony.chiniko@gmail.com",
@@ -247,7 +255,7 @@ export const teamMembers = [
     image: "/images/team/Anthony-Chiniko-Board-member.jpg",
   },
   {
-    id: 4,
+    id: 5,
     name: "Doreen Pitani",
     role: "Board Member",
     email: "dpalichina@gmail.com",
@@ -255,20 +263,12 @@ export const teamMembers = [
     image: "/images/team/Doreen-Pitani-Board-member.jpg",
   },
   {
-    id: 5,
+    id: 6,
     name: "Chisomo Nkoloma",
     role: "Board Member",
     email: "cnkalodzwa@yahoo.co.uk",
     phone: "+265888549814",
     image: "/images/team/Chisomo-Nkoloma-Board-member.jpg",
-  },
-  {
-    id: 6,
-    name: "Charity Kanyoza",
-    role: "Co-founder",
-    email: "Charitykanyoza@gmail.com",
-    phone: "+265995320460",
-    image: "/images/team/Charity-Kanyoza-Co-founder.jpg",
   },
 ];
 
