@@ -1,0 +1,157 @@
+# 🧠 Project Explanation 
+
+> I want to build a community-driven platform where educational resources are shared, organized, and made easily accessible for learning and teaching.
+
+---
+
+# 🌍 The Problem I’m Solving (Malawi Context)
+
+In Malawi:
+
+* Students struggle to find **past papers and study materials**
+* Teachers often **repeat work** because resources are not shared
+* Schools lack a **central place** for learning materials
+* Many students don’t have smartphones, but teachers can **download and print**
+
+👉 This creates a gap:
+
+```text
+Educational resources exist, but they are scattered, inaccessible, and not reusable
+```
+
+---
+
+# 💡 My Solution
+
+I want to build a platform that:
+
+```text
+Collects → organizes → and distributes educational resources in one place
+```
+
+This platform will allow people to:
+
+* Share resources
+* Find resources easily
+* Reuse materials for teaching and studying
+
+---
+
+# 👥 Who It Is For
+
+This is a **community platform**, not limited to one group.
+
+It is for:
+
+* Students
+* Teachers
+* Tutors
+* Schools
+* Anyone contributing to education
+
+---
+
+# 🔁 How It Works
+
+## 1. Contribution
+
+Users can upload resources such as:
+
+* Past papers
+* Notes
+* Worksheets
+
+---
+
+## 2. Organization
+
+Each resource is structured using:
+
+* Subject (e.g. Mathematics, Biology)
+* Level (Primary, JCE, MSCE)
+* Type (Past Paper, Notes, etc.)
+
+---
+
+## 3. Discovery
+
+Users can:
+
+* Browse resources
+* Search by keywords
+* Filter by subject, level, or type
+
+---
+
+## 4. Usage
+
+Users can:
+
+* Download resources
+* Print them
+* Use them for studying or teaching
+
+---
+
+# 🧠 Key Idea Behind the Platform
+
+This is not just about uploading files.
+
+It is about:
+
+```text
+Building a structured, reusable knowledge system for education
+```
+
+---
+
+# 🔥 Why This Matters
+
+This platform will:
+
+* Reduce duplication of effort among teachers
+* Improve access to past papers and study materials
+* Support learning even in low-resource environments
+* Grow into a shared educational ecosystem
+
+---
+
+# ⚙️ How I Will Build It
+
+I will use:
+
+* **Frontend:** Next.js (for the website)
+* **Backend + Database + Storage:** Supabase
+
+This allows me to:
+
+* Build faster
+* Avoid complex backend setup
+* Focus on solving the real problem
+
+---
+
+# 🚀 What I Will Build First (MVP)
+
+* Upload resources
+* Browse and filter resources
+* Download files
+* Basic user accounts
+
+---
+
+# 🧠 Long-Term Vision
+
+As the platform grows, it can evolve into:
+
+* A national resource hub
+* A collaborative learning platform
+* A system where the community improves and validates content
+
+---
+
+# 📌 Final One-Line Vision
+
+> A community-driven platform that centralizes and organizes educational resources, making them easy to share, access, and reuse across Malawi.
+
+------
