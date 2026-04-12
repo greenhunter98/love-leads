@@ -64,40 +64,15 @@ export function useContactForm() {
     setStatus('loading');
     setErrorMessage('');
 
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await res.json();
-
-      if (res.ok) {
-        setStatus('success');
-        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-        setErrors({});
-        setLastSubmitTime(now);
-        // Auto‑dismiss success after 5 seconds
-        setTimeout(() => setStatus('idle'), 5000);
-      } else {
-        // Use server‑provided error message or fallback
-        const serverError = data.error || 'Failed to send message. Please try again.';
-        setErrorMessage(serverError);
-        setStatus('error');
-        // Auto‑dismiss error after 6 seconds
-        setTimeout(() => {
-          if (status === 'error') setStatus('idle');
-        }, 6000);
-      }
-    } catch (err) {
-      console.error('Submit error:', err);
-      setErrorMessage('Network error. Please check your connection and try again.');
-      setStatus('error');
-      setTimeout(() => {
-        if (status === 'error') setStatus('idle');
-      }, 6000);
-    }
+    // Simulated form submission - form is disabled
+    setTimeout(() => {
+      setStatus('success');
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+      setErrors({});
+      setLastSubmitTime(now);
+      // Auto‑dismiss success after 5 seconds
+      setTimeout(() => setStatus('idle'), 5000);
+    }, 500);
   };
 
   return {
