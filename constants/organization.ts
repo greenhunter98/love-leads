@@ -244,7 +244,7 @@ export const teamMembers = [
     role: "Board Member",
     email: "chamanikagrace@gmail.com",
     phone: "+265881677265",
-    image: "/images/team/Grace-chamanika-Board-member.jpg",
+    image: "/images/team/Grace-chamanika-Board-member-c.jpg",
   },
   {
     id: 4,
